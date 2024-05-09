@@ -9,6 +9,7 @@ import jakarta.persistence.Table;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
+import java.util.UUID;
 
 @Entity
 @Table(name = "episodios")
@@ -16,7 +17,7 @@ public class Episodio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private UUID id;
     private Integer temporada;
     private String titulo;
     private Integer numeroEpisodio;
@@ -45,11 +46,11 @@ public class Episodio {
         }
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
